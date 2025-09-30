@@ -28,9 +28,14 @@ namespace ShopOnlineDesktop
         {
             Catalog catalog = new Catalog();
             catalog.InitializeConstant();
-            foreach (var pr in catalog.GetAll())
+            List<Product> temp =catalog.GetAll();
+            //foreach (var pr in catalog.GetAll())
+            //{
+            //    listViewCatalog.Items.Add(new ListViewItem(pr.ToStringArray()));
+            //}
+            for (int i = 0; i < catalog.Count; i++)
             {
-                listViewCatalog.Items.Add(new ListViewItem(pr.ToStringArray()));
+                listViewCatalog.Items.Add(new ListViewItem(catalog[i].ToStringArray()));
             }
         }
     }

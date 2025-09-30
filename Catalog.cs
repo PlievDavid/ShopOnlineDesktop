@@ -9,6 +9,11 @@ namespace ShopOnlineDesktop
     class Catalog
     {
         List<Product> products = new List<Product> { };
+        public int Count { get { return products.Count; } }
+        public Product this[int ind]
+        {
+            get {return products[ind];}
+        }
         public void InitializeConstant()
         {
             products.Add(new Product("Телефон", "понтофон 17, оперативы 512 МВ, 2.2GH", 150_000));
@@ -18,7 +23,7 @@ namespace ShopOnlineDesktop
         }
         public List<Product> GetAll()
         {
-            return products;
+            return new List<Product> (products);
         }
     }
 }
